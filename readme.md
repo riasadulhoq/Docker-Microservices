@@ -20,7 +20,7 @@ Service ports on the host:
 
 | Service           | Host Port |
 |-------------------|-----------|
-| User Service      | 8010      |
+| User Service      | 8000      |
 | Product Service   | 8001      |
 | Inventory Service | 8002      |
 | Order Service     | 8003      |
@@ -32,7 +32,7 @@ Service ports on the host:
 ### Step 1.1: Register a New User
 
 ```bash
-curl -X POST "http://localhost:8010/api/v1/auth/register" \
+curl -X POST "http://localhost:8000/api/v1/auth/register" \
   -H "Content-Type: application/json" \
   -d '{
     "email": "customer@example.com",
@@ -61,7 +61,7 @@ Expected response:
 ### Step 1.2: Login to Get Authentication Token
 
 ```bash
-curl -X POST "http://localhost:8010/api/v1/auth/login" \
+curl -X POST "http://localhost:8000/api/v1/auth/login" \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -d "username=customer@example.com&password=Password123" | jq .
 ```
@@ -85,7 +85,7 @@ TOKEN="<paste access_token value here>"
 ### Step 1.3: Verify User Authentication
 
 ```bash
-curl -X GET "http://localhost:8010/api/v1/users/me" \
+curl -X GET "http://localhost:8000/api/v1/users/me" \
   -H "Authorization: Bearer $TOKEN" | jq .
 ```
 
@@ -109,7 +109,7 @@ Expected response:
 ## 2. Adding User Address
 
 ```bash
-curl -X POST "http://localhost:8010/api/v1/users/me/addresses" \
+curl -X POST "http://localhost:8000/api/v1/users/me/addresses" \
   -H "Authorization: Bearer $TOKEN" \
   -H "Content-Type: application/json" \
   -d '{

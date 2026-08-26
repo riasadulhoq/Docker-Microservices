@@ -30,7 +30,7 @@ Four FastAPI microservices communicating via synchronous REST (httpx.AsyncClient
 
 | Service | Port (host:container) | Database | Purpose |
 |---------|----------------------|----------|---------|
-| user-service | 8010:8000 | PostgreSQL (user_db) | Auth (JWT), user profiles, addresses |
+| user-service | 8000:8000 | PostgreSQL (user_db) | Auth (JWT), user profiles, addresses |
 | product-service | 8001:8001 | MongoDB (product_db) | Product catalog CRUD |
 | inventory-service | 8002:8002 | PostgreSQL (inventory_db) | Stock tracking, reservations, audit history |
 | order-service | 8003:8003 | MongoDB (order_db) | Order processing with multi-service validation |
